@@ -12,7 +12,7 @@ interface Props {
 
 function TodoList({ completedList, todoList, dispatch }: Props) {
     return (
-        <div className="flex flex-col md:flex-row w-full gap-5 justify-between">
+        <div className="flex flex-col lg:flex-row w-full gap-5 justify-between">
             <Droppable droppableId='todoList'>
                 {
                     (provided, snapshot) => (
