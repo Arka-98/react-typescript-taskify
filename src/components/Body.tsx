@@ -11,6 +11,7 @@ function Body() {
   const [input, setInput] = useState<string>('')
   const [todos, dispatch] = useLocalStorage('todoList', [])
 
+  console.log(todos)
   const completedList = useMemo(() => todos.filter(todo => todo.complete), [todos])
   const todoList = useMemo(() => todos.filter(todo => !todo.complete), [todos])
 
@@ -65,7 +66,9 @@ function Body() {
             <p>Add Todo</p>
           </Button>
         </form>
-        <TodoList completedList={completedList} todoList={todoList} dispatch={dispatch} />
+        {
+          !!todos.length && <TodoList completedList={completedList} todoList={todoList} dispatch={dispatch} />
+        }
       </div>
     </DragDropContext>
   )
