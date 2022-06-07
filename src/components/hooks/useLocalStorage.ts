@@ -17,7 +17,7 @@ export type ACTION =
 | {type: ACTION_TYPE.SET, payload: Todo[]}
 
 function getItems(key: string, initialValue: Todo[]): Todo[] {
-    const savedValue: Todo[] = JSON.parse(localStorage.getItem(key) || '')
+    const savedValue: Todo[] = JSON.parse(localStorage.getItem(key) || 'null')
     if(!savedValue) return initialValue
     return savedValue
 }
